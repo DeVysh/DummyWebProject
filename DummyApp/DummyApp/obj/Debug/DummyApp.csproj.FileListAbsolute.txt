@@ -35,6 +35,5 @@ C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\DummyApp.dll
 C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\DummyApp.pdb
 C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\obj\Debug\DummyApp.csprojResolveAssemblyReference.cache
 C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\obj\Debug\DummyApp.dll
 C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\obj\Debug\DummyApp.pdb
