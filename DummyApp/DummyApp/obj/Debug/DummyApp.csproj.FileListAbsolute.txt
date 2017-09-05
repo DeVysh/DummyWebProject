@@ -18,3 +18,23 @@ c:\users\vyshakh.menon\documents\visual studio 2015\Projects\DummyApp\DummyApp\b
 c:\users\vyshakh.menon\documents\visual studio 2015\Projects\DummyApp\DummyApp\obj\Debug\DummyApp.csprojResolveAssemblyReference.cache
 c:\users\vyshakh.menon\documents\visual studio 2015\Projects\DummyApp\DummyApp\obj\Debug\DummyApp.dll
 c:\users\vyshakh.menon\documents\visual studio 2015\Projects\DummyApp\DummyApp\obj\Debug\DummyApp.pdb
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\csc.exe
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\System.Collections.Immutable.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\vbc.exe
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\VBCSCompiler.exe
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\roslyn\VBCSCompiler.exe.config
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\DummyApp.dll.config
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\DummyApp.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\DummyApp.pdb
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\obj\Debug\DummyApp.csprojResolveAssemblyReference.cache
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\obj\Debug\DummyApp.dll
+C:\AWS\TOLL\DummyApp\DummyApp\DummyApp\obj\Debug\DummyApp.pdb
