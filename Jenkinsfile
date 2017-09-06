@@ -1,4 +1,4 @@
-node('LinuxSlave') {
+node() {
    echo 'Hello World'
    ansiblePlaybook forks: 5, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/var/lib/jenkins/jobs/main.yml', sudo: true, sudoUser: 'ec2-user'
    
