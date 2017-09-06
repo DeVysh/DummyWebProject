@@ -1,6 +1,6 @@
 node('LinuxSlave') {
    echo 'Hello World'
-   ansiblePlaybook forks: 5, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/var/jenkins/workspace/JenkinsPipeline/windows_hellowworld.yml', sudo: true, sudoUser: 'ec2-user'
+   ansiblePlaybook forks: 5, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/var/jenkins/workspace/JenkinsPipeline/windows_hellowworld.yml'
    
    print "DEBUG: parameter foo = ${stack}"
 }
