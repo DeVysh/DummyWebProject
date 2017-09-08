@@ -6,9 +6,9 @@ node('master') {
 node('LinuxSlave') {
    echo 'Started execution'
    
-   ansiblePlaybook extras: 'envType=DEV', forks: 5, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/ec2-user/Release/DryRun.yml'
+   ansiblePlaybook -e 'envType=DEV', installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/ec2-user/Release/DryRun.yml'
    echo "Instance created"
-   ansiblePlaybook forks: 5, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/ec2-user/Release/DryAppRun.yml'
+   ansiblePlaybook installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/home/ec2-user/Release/DryAppRun.yml'
    /*echo 'Instance is created.'
    ansiblePlaybook forks: 5, installation: 'Ansible', inventory: '/etc/ansible/hosts', playbook: '/var/jenkins/workspace/JenkinsPipeline/windows_hellowworld.yml'
    echo 'Ansible is triggered'*/
