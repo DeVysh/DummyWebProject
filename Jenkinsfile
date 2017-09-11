@@ -5,8 +5,8 @@ node('master') {
 
 node('LinuxSlave') {
    echo 'Started execution'
-   ansiblePlaybook extras: '-e \'envType=${stack}\'', playbook: '/home/ec2-user/Release/DryRun.yml'
+   ansiblePlaybook inventory: '/etc/ansible/ec2.py', extras: '-e \'envType=${stack}\'', playbook: '/home/ec2-user/Release/DryRun.yml'
    echo "Instance created"
-   ansiblePlaybook installation: 'Ansible', playbook: '/home/ec2-user/Release/DryAppRun.yml'   
+   ansiblePlaybook inventory: '/etc/ansible/ec2.py', installation: 'Ansible', playbook: '/home/ec2-user/Release/DryAppRun.yml'   
    print "DEBUG: parameter foo = ${stack}"
 }
