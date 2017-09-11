@@ -1,0 +1,245 @@
+{
+  "AWSTemplateFormatVersion": "2010-09-09",
+  "Mappings": {
+    "DEV1": {
+      "AppServer1": {
+        "InstanceName": "App",
+        "InstanceType": "t2.micro",
+        "KeyName": "ShashankAWSSydney",
+        "ImageId": "ami-4a20c428",
+        "SubnetId": "subnet-24161d40",
+        "sgroup": [
+          "sg-73a44915"
+        ]
+      },
+      "BusServer1": {
+        "InstanceName": "Bus",
+        "InstanceType": "t2.micro",
+        "KeyName": "ShashankAWSSydney",
+        "ImageId": "ami-4a20c428",
+        "SubnetId": "subnet-24161d40",
+        "sgroup": [
+          "sg-73a44915"
+        ]
+      }
+    },
+	"TEST": {
+      "AppServer1": {
+        "InstanceName": "wstolltestapp1",
+        "InstanceType": "t2.micro",
+        "KeyName": "ShashankAWSSydney",
+        "ImageId": "ami-4a20c428",
+        "SubnetId": "subnet-24161d40",
+        "sgroup": [
+          "sg-73a44915"
+        ]
+      },
+      "BusServer1": {
+        "InstanceName": "wstolltestapp2",
+        "InstanceType": "t2.micro",
+        "KeyName": "ShashankAWSSydney",
+        "ImageId": "ami-4a20c428",
+        "SubnetId": "subnet-24161d40",
+        "sgroup": [
+          "sg-73a44915"
+        ]
+      }
+    }
+  },
+  "Parameters": {
+    "EnvironmentValue": {
+      "AllowedValues": [
+        "DEV",
+        "TEST",
+        "PREPROD",
+        "PROD",
+        "DEV1"
+      ],
+      "Description": "Which environment is to be set up?",
+      "Type": "String"
+    }
+  },
+  "Resources": {
+    "AppServer1": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "DisableApiTermination": "false",
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "ImageId": {
+          "Fn::FindInMap": [
+            {
+              "Ref": "EnvironmentValue"
+            },
+            "AppServer1",
+            "ImageId"
+          ]
+        },
+        "InstanceType": {
+          "Fn::FindInMap": [
+            {
+              "Ref": "EnvironmentValue"
+            },
+            "AppServer1",
+            "InstanceType"
+          ]
+        },
+		"KeyName": {
+          "Fn::FindInMap": [
+            {
+              "Ref": "EnvironmentValue"
+            },
+            "AppServer1",
+            "KeyName"
+          ]
+        },
+        "Monitoring": "false",
+        "Tags": [
+          {
+            "Key": "ELB2",
+            "Value": "ELBInstance2"
+          },
+          {
+            "Key": "Name",
+            "Value":
+              {
+                "Fn::FindInMap": [
+                  {
+                    "Ref": "EnvironmentValue"
+                  },
+                  "AppServer1",
+                  "InstanceName"
+                ]
+              }
+          }
+        ],
+		"NetworkInterfaces": [
+          {
+            "DeleteOnTermination": "true",
+            "AssociatePublicIpAddress": "true",
+            "Description": "Primary network interface",
+            "DeviceIndex": 0,
+            "SubnetId": {
+              "Fn::FindInMap": [
+                {
+                  "Ref": "EnvironmentValue"
+                },
+                "AppServer1",
+                "SubnetId"
+              ]
+            },
+            "GroupSet": {
+              "Fn::FindInMap": [
+                {
+                  "Ref": "EnvironmentValue"
+                },
+                "AppServer1",
+                "sgroup"
+              ]
+            }
+          }
+        ]
+      }
+    },
+	"BusServer1": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "DisableApiTermination": "false",
+        "InstanceInitiatedShutdownBehavior": "stop",
+        "ImageId": {
+          "Fn::FindInMap": [
+            {
+              "Ref": "EnvironmentValue"
+            },
+            "BusServer1",
+            "ImageId"
+          ]
+        },
+        "InstanceType": {
+          "Fn::FindInMap": [
+            {
+              "Ref": "EnvironmentValue"
+            },
+            "BusServer1",
+            "InstanceType"
+          ]
+        },
+		"KeyName": {
+          "Fn::FindInMap": [
+            {
+              "Ref": "EnvironmentValue"
+            },
+            "BusServer1",
+            "KeyName"
+          ]
+        },
+        "Monitoring": "false",
+        "Tags": [
+          {
+            "Key": "ELB2",
+            "Value": "ELBInstance2"
+          },
+          {
+            "Key": "Name",
+            "Value":
+              {
+                "Fn::FindInMap": [
+                  {
+                    "Ref": "EnvironmentValue"
+                  },
+                  "BusServer1",
+                  "InstanceName"
+                ]
+              }
+
+          }
+		 ],
+        "NetworkInterfaces": [
+          {
+            "DeleteOnTermination": "true",
+            "AssociatePublicIpAddress": "true",
+            "Description": "Primary network interface",
+            "DeviceIndex": 0,
+            "SubnetId": {
+              "Fn::FindInMap": [
+                {
+                  "Ref": "EnvironmentValue"
+                },
+                "BusServer1",
+                "SubnetId"
+              ]
+            },
+			 "GroupSet": {
+              "Fn::FindInMap": [
+                {
+                  "Ref": "EnvironmentValue"
+                },
+                "BusServer1",
+                "sgroup"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "Description": "This is a dry run with two instances",
+  "Outputs": {
+    "BusServer1": {
+      "Value": {
+        "Fn::GetAtt": [
+          "BusServer1",
+          "PublicIp"
+        ]
+      }
+    },
+	 "AppServer1": {
+      "Value": {
+        "Fn::GetAtt": [
+          "AppServer1",
+          "PublicIp"
+        ]
+      }
+    }
+  }
+}
+
